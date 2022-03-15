@@ -1,0 +1,80 @@
+.App {
+  //background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  isolation: isolate;
+
+  section {
+    border: 3px #000 solid;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      height: 30px;
+      border: none;
+    }
+
+    .ac {
+      display: grid;
+      grid-template-rows: 65px;
+      grid-template-columns: 160px 80px 80px;
+    }
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+
+    .op {
+      display: grid;
+      grid-template-rows: 65px 65px 130px;
+      grid-template-columns: 80px;
+    }
+  }
+
+  .numbers {
+    display: flex;
+    flex-direction: column;
+
+    div:first-child {
+      display: grid;
+      grid-template-rows: repeat(3, 65px);
+      grid-template-columns: repeat(3, 80px);
+    }
+
+    div:last-child {
+      display: grid;
+      grid-template-rows: 65px;
+      grid-template-columns: 160px 80px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00, #f0f);
+    clip-path: circle(324px at calc(100vw / 2 + 230px) 535px);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(445px at calc(100vw / 2 - 400px) 250px);
+    z-index: -1;
+    mix-blend-mode: hue;
+  }
+}
